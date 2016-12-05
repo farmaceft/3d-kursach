@@ -89,19 +89,28 @@
             this.label11 = new System.Windows.Forms.Label();
             this.checkBoxDeleteLines = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxRColor = new System.Windows.Forms.TextBox();
-            this.textBoxGColor = new System.Windows.Forms.TextBox();
+            this.groupBoxColor = new System.Windows.Forms.GroupBox();
             this.textBoxBColor = new System.Windows.Forms.TextBox();
+            this.textBoxGColor = new System.Windows.Forms.TextBox();
+            this.textBoxRColor = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBoxLight = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxLightX = new System.Windows.Forms.TextBox();
+            this.textBoxLightY = new System.Windows.Forms.TextBox();
+            this.textBoxLightZ = new System.Windows.Forms.TextBox();
+            this.checkBoxLight = new System.Windows.Forms.CheckBox();
             this.groupBoxOrtographichVid.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.groupBoxColor.SuspendLayout();
+            this.groupBoxLight.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_Radius_Konus
@@ -157,7 +166,7 @@
             // 
             // button_Build
             // 
-            this.button_Build.Location = new System.Drawing.Point(51, 161);
+            this.button_Build.Location = new System.Drawing.Point(47, 183);
             this.button_Build.Name = "button_Build";
             this.button_Build.Size = new System.Drawing.Size(74, 23);
             this.button_Build.TabIndex = 6;
@@ -185,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 200);
+            this.label1.Location = new System.Drawing.Point(13, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 13);
             this.label1.TabIndex = 10;
@@ -194,7 +203,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 199);
+            this.label2.Location = new System.Drawing.Point(75, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 11;
@@ -203,7 +212,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(146, 199);
+            this.label3.Location = new System.Drawing.Point(146, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 12;
@@ -211,7 +220,7 @@
             // 
             // textBoxOxPeremeshenie
             // 
-            this.textBoxOxPeremeshenie.Location = new System.Drawing.Point(44, 196);
+            this.textBoxOxPeremeshenie.Location = new System.Drawing.Point(44, 212);
             this.textBoxOxPeremeshenie.Name = "textBoxOxPeremeshenie";
             this.textBoxOxPeremeshenie.Size = new System.Drawing.Size(24, 20);
             this.textBoxOxPeremeshenie.TabIndex = 13;
@@ -219,7 +228,7 @@
             // 
             // textBoxOyPeremeshenie
             // 
-            this.textBoxOyPeremeshenie.Location = new System.Drawing.Point(106, 196);
+            this.textBoxOyPeremeshenie.Location = new System.Drawing.Point(106, 212);
             this.textBoxOyPeremeshenie.Name = "textBoxOyPeremeshenie";
             this.textBoxOyPeremeshenie.Size = new System.Drawing.Size(24, 20);
             this.textBoxOyPeremeshenie.TabIndex = 14;
@@ -227,7 +236,7 @@
             // 
             // textBoxOzPeremeshenie
             // 
-            this.textBoxOzPeremeshenie.Location = new System.Drawing.Point(177, 196);
+            this.textBoxOzPeremeshenie.Location = new System.Drawing.Point(177, 212);
             this.textBoxOzPeremeshenie.Name = "textBoxOzPeremeshenie";
             this.textBoxOzPeremeshenie.Size = new System.Drawing.Size(24, 20);
             this.textBoxOzPeremeshenie.TabIndex = 0;
@@ -235,7 +244,7 @@
             // 
             // buttonPeremeshenie
             // 
-            this.buttonPeremeshenie.Location = new System.Drawing.Point(40, 231);
+            this.buttonPeremeshenie.Location = new System.Drawing.Point(40, 247);
             this.buttonPeremeshenie.Name = "buttonPeremeshenie";
             this.buttonPeremeshenie.Size = new System.Drawing.Size(90, 23);
             this.buttonPeremeshenie.TabIndex = 15;
@@ -246,7 +255,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 273);
+            this.label4.Location = new System.Drawing.Point(13, 289);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 16;
@@ -255,7 +264,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(75, 273);
+            this.label5.Location = new System.Drawing.Point(75, 289);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 17;
@@ -264,7 +273,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(146, 273);
+            this.label6.Location = new System.Drawing.Point(146, 289);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 18;
@@ -272,7 +281,7 @@
             // 
             // textBoxQxMashtab
             // 
-            this.textBoxQxMashtab.Location = new System.Drawing.Point(42, 270);
+            this.textBoxQxMashtab.Location = new System.Drawing.Point(42, 286);
             this.textBoxQxMashtab.Name = "textBoxQxMashtab";
             this.textBoxQxMashtab.Size = new System.Drawing.Size(24, 20);
             this.textBoxQxMashtab.TabIndex = 19;
@@ -280,7 +289,7 @@
             // 
             // textBoxQyMashtab
             // 
-            this.textBoxQyMashtab.Location = new System.Drawing.Point(106, 270);
+            this.textBoxQyMashtab.Location = new System.Drawing.Point(106, 286);
             this.textBoxQyMashtab.Name = "textBoxQyMashtab";
             this.textBoxQyMashtab.Size = new System.Drawing.Size(24, 20);
             this.textBoxQyMashtab.TabIndex = 20;
@@ -288,7 +297,7 @@
             // 
             // textBoxQzMashtab
             // 
-            this.textBoxQzMashtab.Location = new System.Drawing.Point(175, 270);
+            this.textBoxQzMashtab.Location = new System.Drawing.Point(175, 286);
             this.textBoxQzMashtab.Name = "textBoxQzMashtab";
             this.textBoxQzMashtab.Size = new System.Drawing.Size(24, 20);
             this.textBoxQzMashtab.TabIndex = 21;
@@ -296,7 +305,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(40, 309);
+            this.button1.Location = new System.Drawing.Point(40, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 23);
             this.button1.TabIndex = 22;
@@ -307,7 +316,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(126, 353);
+            this.label7.Location = new System.Drawing.Point(126, 369);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 24;
@@ -315,7 +324,7 @@
             // 
             // textBoxUgolVrashenie
             // 
-            this.textBoxUgolVrashenie.Location = new System.Drawing.Point(171, 350);
+            this.textBoxUgolVrashenie.Location = new System.Drawing.Point(171, 366);
             this.textBoxUgolVrashenie.Name = "textBoxUgolVrashenie";
             this.textBoxUgolVrashenie.Size = new System.Drawing.Size(23, 20);
             this.textBoxUgolVrashenie.TabIndex = 25;
@@ -323,7 +332,7 @@
             // 
             // buttonVrashenie
             // 
-            this.buttonVrashenie.Location = new System.Drawing.Point(125, 376);
+            this.buttonVrashenie.Location = new System.Drawing.Point(125, 392);
             this.buttonVrashenie.Name = "buttonVrashenie";
             this.buttonVrashenie.Size = new System.Drawing.Size(69, 23);
             this.buttonVrashenie.TabIndex = 26;
@@ -334,7 +343,7 @@
             // radioButtonOxVrashenie
             // 
             this.radioButtonOxVrashenie.AutoSize = true;
-            this.radioButtonOxVrashenie.Location = new System.Drawing.Point(12, 351);
+            this.radioButtonOxVrashenie.Location = new System.Drawing.Point(12, 367);
             this.radioButtonOxVrashenie.Name = "radioButtonOxVrashenie";
             this.radioButtonOxVrashenie.Size = new System.Drawing.Size(76, 17);
             this.radioButtonOxVrashenie.TabIndex = 27;
@@ -345,7 +354,7 @@
             // radioButtonOyVrashenie
             // 
             this.radioButtonOyVrashenie.AutoSize = true;
-            this.radioButtonOyVrashenie.Location = new System.Drawing.Point(12, 375);
+            this.radioButtonOyVrashenie.Location = new System.Drawing.Point(12, 391);
             this.radioButtonOyVrashenie.Name = "radioButtonOyVrashenie";
             this.radioButtonOyVrashenie.Size = new System.Drawing.Size(76, 17);
             this.radioButtonOyVrashenie.TabIndex = 28;
@@ -356,7 +365,7 @@
             // radioButtonOzVrashenie
             // 
             this.radioButtonOzVrashenie.AutoSize = true;
-            this.radioButtonOzVrashenie.Location = new System.Drawing.Point(12, 397);
+            this.radioButtonOzVrashenie.Location = new System.Drawing.Point(12, 413);
             this.radioButtonOzVrashenie.Name = "radioButtonOzVrashenie";
             this.radioButtonOzVrashenie.Size = new System.Drawing.Size(76, 17);
             this.radioButtonOzVrashenie.TabIndex = 29;
@@ -366,7 +375,7 @@
             // 
             // buttonPuskTimerVrashenie
             // 
-            this.buttonPuskTimerVrashenie.Location = new System.Drawing.Point(125, 405);
+            this.buttonPuskTimerVrashenie.Location = new System.Drawing.Point(125, 421);
             this.buttonPuskTimerVrashenie.Name = "buttonPuskTimerVrashenie";
             this.buttonPuskTimerVrashenie.Size = new System.Drawing.Size(69, 23);
             this.buttonPuskTimerVrashenie.TabIndex = 30;
@@ -384,7 +393,7 @@
             this.groupBoxOrtographichVid.Controls.Add(this.radiobuttonGorizontVid);
             this.groupBoxOrtographichVid.Controls.Add(this.radiobuttonProfileVid);
             this.groupBoxOrtographichVid.Controls.Add(this.radiobuttonFrontVid);
-            this.groupBoxOrtographichVid.Location = new System.Drawing.Point(22, 434);
+            this.groupBoxOrtographichVid.Location = new System.Drawing.Point(22, 450);
             this.groupBoxOrtographichVid.Name = "groupBoxOrtographichVid";
             this.groupBoxOrtographichVid.Size = new System.Drawing.Size(172, 70);
             this.groupBoxOrtographichVid.TabIndex = 31;
@@ -441,7 +450,7 @@
             this.groupBox1.Controls.Add(this.textBoxPhiAksonometria);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(12, 510);
+            this.groupBox1.Location = new System.Drawing.Point(12, 526);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(232, 54);
             this.groupBox1.TabIndex = 32;
@@ -660,6 +669,7 @@
             this.checkBoxDeleteLines.TabIndex = 35;
             this.checkBoxDeleteLines.Text = "Удаление невидимых линий";
             this.checkBoxDeleteLines.UseVisualStyleBackColor = true;
+            this.checkBoxDeleteLines.CheckedChanged += new System.EventHandler(this.checkBoxDeleteLines_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -669,39 +679,45 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // groupBox4
+            // groupBoxColor
             // 
-            this.groupBox4.Controls.Add(this.textBoxBColor);
-            this.groupBox4.Controls.Add(this.textBoxGColor);
-            this.groupBox4.Controls.Add(this.textBoxRColor);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(552, 434);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(187, 70);
-            this.groupBox4.TabIndex = 37;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Цвет:";
+            this.groupBoxColor.Controls.Add(this.textBoxBColor);
+            this.groupBoxColor.Controls.Add(this.textBoxGColor);
+            this.groupBoxColor.Controls.Add(this.textBoxRColor);
+            this.groupBoxColor.Controls.Add(this.label17);
+            this.groupBoxColor.Controls.Add(this.label16);
+            this.groupBoxColor.Controls.Add(this.label15);
+            this.groupBoxColor.Enabled = false;
+            this.groupBoxColor.Location = new System.Drawing.Point(552, 434);
+            this.groupBoxColor.Name = "groupBoxColor";
+            this.groupBoxColor.Size = new System.Drawing.Size(200, 70);
+            this.groupBoxColor.TabIndex = 37;
+            this.groupBoxColor.TabStop = false;
+            this.groupBoxColor.Text = "Цвет:";
             // 
-            // label15
+            // textBoxBColor
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 26);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(18, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "R:";
+            this.textBoxBColor.Location = new System.Drawing.Point(149, 22);
+            this.textBoxBColor.Name = "textBoxBColor";
+            this.textBoxBColor.Size = new System.Drawing.Size(38, 20);
+            this.textBoxBColor.TabIndex = 5;
+            this.textBoxBColor.Text = "255";
             // 
-            // label16
+            // textBoxGColor
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(64, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(18, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "G:";
+            this.textBoxGColor.Location = new System.Drawing.Point(88, 23);
+            this.textBoxGColor.Name = "textBoxGColor";
+            this.textBoxGColor.Size = new System.Drawing.Size(35, 20);
+            this.textBoxGColor.TabIndex = 4;
+            this.textBoxGColor.Text = "255";
+            // 
+            // textBoxRColor
+            // 
+            this.textBoxRColor.Location = new System.Drawing.Point(26, 23);
+            this.textBoxRColor.Name = "textBoxRColor";
+            this.textBoxRColor.Size = new System.Drawing.Size(32, 20);
+            this.textBoxRColor.TabIndex = 3;
+            this.textBoxRColor.Text = "255";
             // 
             // label17
             // 
@@ -712,36 +728,110 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "B:";
             // 
-            // textBoxRColor
+            // label16
             // 
-            this.textBoxRColor.Location = new System.Drawing.Point(31, 23);
-            this.textBoxRColor.Name = "textBoxRColor";
-            this.textBoxRColor.Size = new System.Drawing.Size(23, 20);
-            this.textBoxRColor.TabIndex = 3;
-            this.textBoxRColor.Text = "255";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(67, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(18, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "G:";
             // 
-            // textBoxGColor
+            // label15
             // 
-            this.textBoxGColor.Location = new System.Drawing.Point(88, 23);
-            this.textBoxGColor.Name = "textBoxGColor";
-            this.textBoxGColor.Size = new System.Drawing.Size(23, 20);
-            this.textBoxGColor.TabIndex = 4;
-            this.textBoxGColor.Text = "255";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 26);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "R:";
             // 
-            // textBoxBColor
+            // groupBoxLight
             // 
-            this.textBoxBColor.Location = new System.Drawing.Point(149, 23);
-            this.textBoxBColor.Name = "textBoxBColor";
-            this.textBoxBColor.Size = new System.Drawing.Size(23, 20);
-            this.textBoxBColor.TabIndex = 5;
-            this.textBoxBColor.Text = "255";
+            this.groupBoxLight.Controls.Add(this.textBoxLightZ);
+            this.groupBoxLight.Controls.Add(this.textBoxLightY);
+            this.groupBoxLight.Controls.Add(this.textBoxLightX);
+            this.groupBoxLight.Controls.Add(this.label20);
+            this.groupBoxLight.Controls.Add(this.label19);
+            this.groupBoxLight.Controls.Add(this.label18);
+            this.groupBoxLight.Enabled = false;
+            this.groupBoxLight.Location = new System.Drawing.Point(552, 510);
+            this.groupBoxLight.Name = "groupBoxLight";
+            this.groupBoxLight.Size = new System.Drawing.Size(200, 70);
+            this.groupBoxLight.TabIndex = 38;
+            this.groupBoxLight.TabStop = false;
+            this.groupBoxLight.Text = "Свет";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 35);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(15, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "x:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(70, 35);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(15, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "y:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(131, 35);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "z:";
+            // 
+            // textBoxLightX
+            // 
+            this.textBoxLightX.Location = new System.Drawing.Point(28, 32);
+            this.textBoxLightX.Name = "textBoxLightX";
+            this.textBoxLightX.Size = new System.Drawing.Size(35, 20);
+            this.textBoxLightX.TabIndex = 3;
+            this.textBoxLightX.Text = "150";
+            // 
+            // textBoxLightY
+            // 
+            this.textBoxLightY.Location = new System.Drawing.Point(88, 32);
+            this.textBoxLightY.Name = "textBoxLightY";
+            this.textBoxLightY.Size = new System.Drawing.Size(35, 20);
+            this.textBoxLightY.TabIndex = 4;
+            this.textBoxLightY.Text = "0";
+            // 
+            // textBoxLightZ
+            // 
+            this.textBoxLightZ.Location = new System.Drawing.Point(152, 32);
+            this.textBoxLightZ.Name = "textBoxLightZ";
+            this.textBoxLightZ.Size = new System.Drawing.Size(35, 20);
+            this.textBoxLightZ.TabIndex = 5;
+            this.textBoxLightZ.Text = "0";
+            // 
+            // checkBoxLight
+            // 
+            this.checkBoxLight.AutoSize = true;
+            this.checkBoxLight.Location = new System.Drawing.Point(18, 160);
+            this.checkBoxLight.Name = "checkBoxLight";
+            this.checkBoxLight.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxLight.TabIndex = 39;
+            this.checkBoxLight.Text = "Свет";
+            this.checkBoxLight.UseVisualStyleBackColor = true;
+            this.checkBoxLight.CheckedChanged += new System.EventHandler(this.checkBoxLight_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 583);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(777, 587);
+            this.Controls.Add(this.checkBoxLight);
+            this.Controls.Add(this.groupBoxLight);
+            this.Controls.Add(this.groupBoxColor);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxDeleteLines);
             this.Controls.Add(this.groupBox3);
@@ -791,8 +881,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupBoxColor.ResumeLayout(false);
+            this.groupBoxColor.PerformLayout();
+            this.groupBoxLight.ResumeLayout(false);
+            this.groupBoxLight.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -860,13 +952,21 @@
         private System.Windows.Forms.TextBox textBoxPhiPerspective;
         private System.Windows.Forms.CheckBox checkBoxDeleteLines;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBoxColor;
         private System.Windows.Forms.TextBox textBoxRColor;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxBColor;
         private System.Windows.Forms.TextBox textBoxGColor;
+        private System.Windows.Forms.GroupBox groupBoxLight;
+        private System.Windows.Forms.TextBox textBoxLightZ;
+        private System.Windows.Forms.TextBox textBoxLightY;
+        private System.Windows.Forms.TextBox textBoxLightX;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckBox checkBoxLight;
     }
 }
 

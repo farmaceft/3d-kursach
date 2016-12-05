@@ -18,6 +18,7 @@ namespace _3d_Kursach
         List<Grane> listGrane = new List<Grane>();
         List<int> listIndexFirstCilindr, listIndexFirstKonus;
         List<List<double>> listPerspective = new List<List<double>>();
+        public bool VrashenieAndPerspective = false;
         public Form1()
         {
             InitializeComponent();
@@ -205,6 +206,7 @@ namespace _3d_Kursach
                 listPoints.RemoveRange(0, listPoints.Count);
                 listRebraBeforePoints.RemoveRange(0, listRebraBeforePoints.Count);
                 listGrane.RemoveRange(0, listGrane.Count);
+                VrashenieAndPerspective = false;
 
                 this.height = -Convert.ToDouble(textbox_High_Konus.Text);
                 this.radiusCilindr = Convert.ToDouble(textbox_Radius_Cilindr.Text);
@@ -305,8 +307,14 @@ namespace _3d_Kursach
                 }
                 matrixUmnoshenie(listPoints, matrixVrashenie);
 
-                
-                drawFigures(listPoints);
+                if (VrashenieAndPerspective)
+                {
+                    buttonPerspective_Click(sender, e);
+                }
+                else
+                {
+                    drawFigures(listPoints);
+                }
             }
         }
 
@@ -437,9 +445,41 @@ namespace _3d_Kursach
                                        { -koeffIskashenia * Math.Cos(ugolGorizontNaklon), -koeffIskashenia * Math.Sin(ugolGorizontNaklon), 0, 0 },
                                        { 0, 0, 0, 1 } };
 
-            matrixUmnoshenie(listPoints, matrixKosoug);
+            double[,] matrixKosougListPoints = { { 1, 0, 0, 0 },
+                                                 { 0, 1, 0, 0 },
+                                                 { -koeffIskashenia * Math.Cos(ugolGorizontNaklon), -koeffIskashenia * Math.Sin(ugolGorizontNaklon), 1, 0 },
+                                                 { 0, 0, 0, 1 } };
+
+            pointsListToList();
+            matrixUmnoshenie(listPerspective, matrixKosoug);
+
+            matrixUmnoshenie(listPoints, matrixKosougListPoints);
             
-            drawFigures(listPoints);
+            drawFigures(listPerspective);
+        }
+
+        private void checkBoxLight_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxLight.Checked)
+            {
+                groupBoxLight.Enabled = true;
+            }
+            else
+            {
+                groupBoxLight.Enabled = false;
+            }
+        }
+
+        private void checkBoxDeleteLines_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDeleteLines.Checked)
+            {
+                groupBoxColor.Enabled = true;
+            }
+            else
+            {
+                groupBoxColor.Enabled = false;
+            }
         }
 
         private void buttonPerspective_Click(object sender, EventArgs e)
@@ -448,6 +488,8 @@ namespace _3d_Kursach
             double etta = Convert.ToDouble(textBoxEttaPerspective.Text) * Math.PI / 180;
             double d = Convert.ToDouble(textBoxdPerspective.Text);
             double ro = Convert.ToDouble(textBoxRoPerspective.Text);
+
+            VrashenieAndPerspective = true;
 
             listPerspective = new List<List<double>>();
             List<double> list = new List<double>();
@@ -537,7 +579,7 @@ namespace _3d_Kursach
                 Grane buff = new Grane(mass);
                 for(int i = 0; i < listGrane.Count - 1; ++i)
                 {
-                    if(listGrane[i].CenterGrane(list, (int)NAprocsimation) < listGrane[i + 1].CenterGrane(list, (int)NAprocsimation))
+                    if(listGrane[i].CenterGraneZ(list, (int)NAprocsimation) < listGrane[i + 1].CenterGraneZ(list, (int)NAprocsimation))
                     {
                         buff = listGrane[i];
                         listGrane[i] = listGrane[i + 1];
@@ -545,26 +587,65 @@ namespace _3d_Kursach
                     }
                 }
 
-                groupBox4.Enabled = true;
-                if ((textBoxRColor.Text != "") && (textBoxGColor.Text != "") && (textBoxBColor.Text != ""))
-                {
-                    int R = Convert.ToInt32(textBoxRColor.Text);
-                    int G = Convert.ToInt32(textBoxGColor.Text);
-                    int B = Convert.ToInt32(textBoxBColor.Text);
-
-                    if ((R <= 255) && (G <= 255) && (B <= 255))
-                    {
-                        colorGrane = new SolidBrush(Color.FromArgb(R, G, B));
-                    }
-                }
-
                 for (int i = 0; i < listGrane.Count; ++i)
                 {
+                    if ((textBoxRColor.Text != "") && (textBoxGColor.Text != "") && (textBoxBColor.Text != ""))
+                    {
+                        int R = Convert.ToInt32(textBoxRColor.Text);
+                        int G = Convert.ToInt32(textBoxGColor.Text);
+                        int B = Convert.ToInt32(textBoxBColor.Text);
+
+                        if ((R <= 255) && (G <= 255) && (B <= 255))
+                        {
+                            if ((checkBoxLight.Checked) && (textBoxLightX.Text != "") && (textBoxLightY.Text != "") && (textBoxLightZ.Text != ""))
+                            {
+                                if (LightGraneKoeff(listGrane[i], list) > 0)
+                                {
+                                    double koeff = LightGraneKoeff(listGrane[i], list);
+
+                                    R = Convert.ToInt32(Convert.ToDouble(R) * koeff);
+                                    G = Convert.ToInt32(Convert.ToDouble(G) * koeff);
+                                    B = Convert.ToInt32(Convert.ToDouble(B) * koeff);
+                                }
+                            }
+
+                            colorGrane = new SolidBrush(Color.FromArgb(R, G, B));
+                        }
+                    }
+
                     listGrane[i].drawGrane(list, colorGrane, graphics);
                 }
             }
             pictureBox1.Image = bit;
             pictureBox1.Invalidate();
+        }
+
+        public double LightGraneKoeff(Grane grane, List<List<double>> list)
+        {
+            double X1 = list[grane.massPointsGrane[0]][0];
+            double X2 = list[grane.massPointsGrane[1]][0];
+            double X3 = list[grane.massPointsGrane[2]][0];
+            double Y1 = list[grane.massPointsGrane[0]][1];
+            double Y2 = list[grane.massPointsGrane[1]][1];
+            double Y3 = list[grane.massPointsGrane[2]][1];
+            double Z1 = list[grane.massPointsGrane[0]][2];
+            double Z2 = list[grane.massPointsGrane[1]][2];
+            double Z3 = list[grane.massPointsGrane[2]][2];
+
+            double A = Y1 * (Z2 - Z3) + Y2 * (Z3 - Z1) + Y3 * (Z1 - Z2);
+            double B = Z1 * (X2 - X3) + Z2 * (X3 - X1) + Z3 * (X1 - X2);
+            double C = X1 * (Y2 - Y3) + X2 * (Y3 - Y1) + X3 * (Y1 - Y2);
+
+            double x1 = grane.CenterGraneX(list, (int) NAprocsimation);
+            double x2 = Convert.ToDouble(textBoxLightX.Text);
+            double y1 = grane.CenterGraneY(list, (int) NAprocsimation);
+            double y2 = Convert.ToDouble(textBoxLightY.Text);
+            double z1 = grane.CenterGraneZ(list, (int) NAprocsimation);
+            double z2 = Convert.ToDouble(textBoxLightZ.Text);
+
+            return Math.Abs((A * (x2 - x1) + B * (y2 - y1) + C * (z2 - z1)) /
+                Math.Sqrt(A * A + B * B + C * C) /
+                Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1)));
         }
     }
 }
